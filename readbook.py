@@ -2,7 +2,11 @@ import os.path
 import json
 import itertools
 import sys
-filename = "readbook.status"
+filename = os.path.expanduser('~')+"/readbook.status"
+if not (os.path.exists(filename)) :
+    with open(filename, 'w') as outfile:
+        print("Status File Created")
+
 def searchbook(book,data):
     x = 0
     for sublist in data:
